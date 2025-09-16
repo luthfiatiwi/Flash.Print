@@ -1,7 +1,11 @@
-import Navbar from "../blocks/Navbar";
+import MainLayout from "../layout/MainLayout"
 
 export default function Home() {
     return (
-        <Navbar />
+        <MainLayout>
+
+        </MainLayout>
+
+
     )
 }
