@@ -6,7 +6,7 @@ export default function Navbar() {
             <Container className={"flex justify-between items-center px-4 py-2"}>
 
                 {/* Logo */}
-                <h5 className="text-3xl font-serif text-red-900">Flash.Print</h5>
+                <a href="/" className="text-3xl font-serif text-red-900">Flash.Print</a>
 
                 {/* Search Bar */}
                 <div className="relative flex items-center w-[900px]">
