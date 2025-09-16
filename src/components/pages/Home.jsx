@@ -1,5 +1,7 @@
+import Navbar from "../blocks/Navbar";
+
 export default function Home() {
     return (
-        <div>HELLO WORLD</div>
+        <Navbar />
     )
 }
