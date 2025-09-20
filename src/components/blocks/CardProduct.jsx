@@ -1,6 +1,6 @@
 import Container from "../layout/Container";
 
-export default function CardProduct() {
+export default function CardProduct({ price }) {
     return (
         <Container>
             <section className="my-8">
@@ -16,7 +16,7 @@ export default function CardProduct() {
                         </figure>
                         <div className="card-body">
                             <h2 className="text-2xl font-serif font-bold ">Card Title</h2>
-                            <p className="text-[16px] font-serif">A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                            <p>{new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(price)}</p>
                             <div className="card-actions flex justify-center">
                                 <button className=" bg-red-700 text-white font-bold rounded w-full h-10 flex justify-center px-2 py-1">
                                     <img src="/keranjang.svg" />
