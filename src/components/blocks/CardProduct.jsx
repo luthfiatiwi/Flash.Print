@@ -3,24 +3,32 @@ import Container from "../layout/Container";
 export default function CardProduct() {
     return (
         <Container>
-            <section className="">
-                <div className="card bg-base-100 w-96 shadow-sm">
-                    <figure className="px-10 pt-10">
-                        <img
-                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes"
-                            className="rounded-xl" />
-                    </figure>
-                    <div className="card-body items-center text-center">
-                        <h2 className="card-title">Card Title</h2>
-                        <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                        <div className="card-actions">
-                            <button className="btn btn-primary">Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <section className="my-8">
+                <h4 className="text-3xl flex item-center justify-center font-bold font-serif">Produk Kami</h4>
 
+                <div className="grid grid-cols-4 gap-5 mt-12">
+                    <div className="card bg-base-100 w-full shadow-sm border-red-800 border-4 rounded-2xl">
+                        <figure className="px-7 pt-7">
+                            <img
+                                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                alt="Shoes"
+                                className="rounded-xl" />
+                        </figure>
+                        <div className="card-body">
+                            <h2 className="text-2xl font-serif font-bold ">Card Title</h2>
+                            <p className="text-[16px] font-serif">A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                            <div className="card-actions flex justify-center">
+                                <button className=" bg-red-700 text-white font-bold rounded w-full h-10 flex justify-center px-2 py-1">
+                                    <img src="/keranjang.svg" />
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
         </Container>
 
     )
