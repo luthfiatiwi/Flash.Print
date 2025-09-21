@@ -1,5 +1,7 @@
 import Container from "../layout/Container"
 import MainLayout from "../layout/MainLayout"
+import ButtonOrder from "../ui/ButtonOrder"
+import Counter from "../ui/Counter"
 
 
 
@@ -26,12 +28,12 @@ export default function CheckOut() {
                             <div className="mb-6">
                                 <h3 className="text-xl font-semibold mb-2">Cetak Sisi</h3>
                                 <div className="flex space-x-4">
-                                    <button className="border-2 border-red-800 w-full rounded-md py-2 px-6 text-red-800 font-semibold transition duration-300 hover:bg-red-800 hover:text-white">
+                                    <ButtonOrder className="border-2 border-red-800 w-full rounded-md text-red-800 font-semibold transition duration-300 hover:text-white h-3 flex justify-center items-center p-2">
                                         1 Sisi
-                                    </button>
-                                    <button className="border-2 border-red-800 w-full rounded-md py-2 px-6 text-red-800 font-semibold transition duration-300 hover:bg-red-800 hover:text-white">
+                                    </ButtonOrder>
+                                    <ButtonOrder className="border-2 border-red-800 w-full rounded-md text-red-800 font-semibold transition duration-300 hover:text-white flex justify-center items-center h-3 p-2">
                                         2 Sisi
-                                    </button>
+                                    </ButtonOrder>
                                 </div>
                             </div>
 
@@ -46,9 +48,9 @@ export default function CheckOut() {
                             <div className="mb-6 flex justify-between">
                                 <h3 className="text-xl font-semibold mb-2">Jumlah ( Cetak Berapa Kali )</h3>
                                 <div className="flex justify-end space-x-2">
-                                    <button className="border-2 border-red-800 rounded-md w-10 h-10 flex items-center justify-center text-red-800 hover:bg-red-800  hover:text-white font-bold text-2xl">
+                                    <Counter className="border-2 border-red-800 rounded-md w-10 h-10 flex items-center justify-center text-red-800  hover:text-white font-bold text-2xl">
                                         -
-                                    </button>
+                                    </Counter>
                                     <div className="border-2 border-red-800 rounded-md w-16 h-10 flex items-center justify-center text-xl font-semibold">
                                         1
                                     </div>
@@ -58,9 +60,9 @@ export default function CheckOut() {
                                 </div>
                             </div>
 
-                            <button className="w-full bg-red-800 text-white font-bold py-3 rounded-md transition duration-300 hover:bg-red-600">
-                                Order
-                            </button>
+                            <ButtonOrder className="border-2 border-red-800 w-full  text-red-800 hover:text-white font-bold py-3 rounded-md transition duration-300 h-10 flex justify-center items-center">
+                                Order Sekarang
+                            </ButtonOrder>
                         </div>
                     </div>
                 </section>
