@@ -9,7 +9,7 @@ export default function Navbar() {
                 <a href="/" className="text-3xl font-serif text-red-900">Flash.Print</a>
 
                 {/* Search Bar */}
-                <div className="relative flex items-center w-[900px]">
+                <div className="relative flex items-center w-[900px] font-serif">
                     <input type="text"
                         placeholder="Anda Ingin Cetak Apa ?"
                         className="w-full px-4 py-1 text-white bg-red-800 rounded-md focus:outline-none placeholder-white " />
