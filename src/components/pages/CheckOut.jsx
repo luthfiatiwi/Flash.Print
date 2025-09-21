@@ -28,10 +28,10 @@ export default function CheckOut() {
                             <div className="mb-6">
                                 <h3 className="text-xl font-semibold mb-2">Cetak Sisi</h3>
                                 <div className="flex space-x-4">
-                                    <ButtonOrder className="border-2 border-red-800 w-full rounded-md text-red-800 font-semibold transition duration-300 hover:text-white h-3 flex justify-center items-center p-2">
+                                    <ButtonOrder className="border-2 border-white w-full rounded-md text-white font-semibold transition duration-300  h-3 flex justify-center items-center p-2">
                                         1 Sisi
                                     </ButtonOrder>
-                                    <ButtonOrder className="border-2 border-red-800 w-full rounded-md text-red-800 font-semibold transition duration-300 hover:text-white flex justify-center items-center h-3 p-2">
+                                    <ButtonOrder className="border-2 border-white w-full rounded-md text-white font-semibold transition duration-300  flex justify-center items-center h-3 p-2">
                                         2 Sisi
                                     </ButtonOrder>
                                 </div>
@@ -48,19 +48,19 @@ export default function CheckOut() {
                             <div className="mb-6 flex justify-between">
                                 <h3 className="text-xl font-semibold mb-2">Jumlah ( Cetak Berapa Kali )</h3>
                                 <div className="flex justify-end space-x-2">
-                                    <Counter className="border-2 border-red-800 rounded-md w-10 h-10 flex items-center justify-center text-red-800  hover:text-white font-bold text-2xl">
+                                    <Counter className="border-2 border-white rounded-md w-10 h-10 flex items-center justify-center text-white  font-bold text-2xl">
                                         -
                                     </Counter>
-                                    <div className="border-2 border-red-800 rounded-md w-16 h-10 flex items-center justify-center text-xl font-semibold">
+                                    <div className="border-2 border-red-900 rounded-md w-16 h-10 flex items-center justify-center text-xl font-semibold">
                                         1
                                     </div>
-                                    <button className="border-2 border-red-800 rounded-md w-10 h-10 flex items-center justify-center text-red-800 hover:bg-red-800  hover:text-white font-bold text-2xl">
+                                    <Counter className="border-2 border-white rounded-md w-10 h-10 flex items-center justify-center text-white font-bold text-2xl">
                                         +
-                                    </button>
+                                    </Counter>
                                 </div>
                             </div>
 
-                            <ButtonOrder className="border-2 border-red-800 w-full  text-red-800 hover:text-white font-bold py-3 rounded-md transition duration-300 h-10 flex justify-center items-center">
+                            <ButtonOrder className="border-2 border-white w-full  text-white font-bold py-3 rounded-md transition duration-300 h-10 flex justify-center items-center">
                                 Order Sekarang
                             </ButtonOrder>
                         </div>

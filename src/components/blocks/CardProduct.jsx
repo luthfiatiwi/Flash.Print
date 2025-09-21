@@ -1,4 +1,5 @@
 import Container from "../layout/Container";
+import ButtonOrder from "../ui/ButtonOrder";
 
 export default function CardProduct({ price }) {
     return (
@@ -18,9 +19,9 @@ export default function CardProduct({ price }) {
                             <h2 className="text-2xl font-serif font-bold ">Card Title</h2>
                             <p>{new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(price)}</p>
                             <div className="card-actions flex justify-center">
-                                <button className=" bg-red-700 text-white font-bold rounded w-full h-10 flex justify-center px-2 py-1">
-                                    <img src="/keranjang.svg" />
-                                </button>
+                                <ButtonOrder className=" border-2 border-white font-bold rounded w-full h-10 flex justify-center items-center px-2 py-1">
+                                    <img className="w-6 h-6" src="/keranjang.svg" />
+                                </ButtonOrder>
                             </div>
                         </div>
 

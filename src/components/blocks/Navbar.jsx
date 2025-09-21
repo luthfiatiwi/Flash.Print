@@ -12,8 +12,8 @@ export default function Navbar() {
                 <div className="relative flex items-center w-[900px] font-serif">
                     <input type="text"
                         placeholder="Anda Ingin Cetak Apa ?"
-                        className="w-full px-4 py-1 text-white bg-red-800 rounded-md focus:outline-none placeholder-white " />
-                    <button className="absolute right-0 top-0 h-full px-4 text-white bg-red-950 rounded-r-md flex items-center justify-center hover:bg-red-700">
+                        className="w-full px-4 py-1 text-white bg-red-700 rounded-md focus:outline-none placeholder-white " />
+                    <button className="absolute right-0 top-0 h-full px-4 text-white bg-red-900 rounded-r-md flex items-center justify-center hover:bg-red-700">
                         <span className="flex items-center gap-1">
                             <img src="/search.svg" />
                             Cari</span>
