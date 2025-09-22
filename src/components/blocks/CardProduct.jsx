@@ -1,7 +1,9 @@
 import Container from "../layout/Container";
 import ButtonOrder from "../ui/ButtonOrder";
+import { Link } from "react-router";
 
 export default function CardProduct({ price }) {
+
     return (
         <Container>
             <section className="my-8">
@@ -19,9 +21,11 @@ export default function CardProduct({ price }) {
                             <h2 className="text-2xl font-serif font-bold ">Card Title</h2>
                             <p>{new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(price)}</p>
                             <div className="card-actions flex justify-center">
-                                <ButtonOrder className=" border-2 border-white font-bold rounded w-full h-10 flex justify-center items-center px-2 py-1">
-                                    <img className="w-6 h-6" src="/keranjang.svg" />
-                                </ButtonOrder>
+                                <Link className="w-full" to="/checkout">
+                                    <ButtonOrder className=" border-2 border-white font-bold rounded w-full h-10 flex justify-center items-center px-2 py-1">
+                                        <img className="w-6 h-6" src="/keranjang.svg" />
+                                    </ButtonOrder>
+                                </Link>
                             </div>
                         </div>
 
