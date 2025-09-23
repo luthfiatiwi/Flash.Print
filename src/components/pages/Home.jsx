@@ -1,10 +1,10 @@
-import CardProduct from "../blocks/CardProduct"
+import ProductSection from "../section/ProductSections"
 import MainLayout from "../layout/MainLayout"
 
 export default function Home() {
     return (
         <MainLayout>
-            <CardProduct />
+            <ProductSection />
         </MainLayout>
 
 
