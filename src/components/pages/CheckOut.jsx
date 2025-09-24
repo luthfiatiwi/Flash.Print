@@ -2,6 +2,7 @@ import Container from "../layout/Container"
 import MainLayout from "../layout/MainLayout"
 import ButtonOrder from "../ui/ButtonOrder"
 import Counter from "../ui/Counter"
+import Input from "../ui/Input";
 
 
 
@@ -22,9 +23,14 @@ export default function CheckOut() {
 
                         {/* Bagian untuk Detail Produk */}
                         <div className="w-full md:w-1/2 border-2 border-red-800 rounded-lg p-6 bg-white shadow-lg font-serif">
+
+                            {/* nama produk */}
                             <h2 className="text-2xl md:text-3xl font-bold mb-2">A4 HVS Hitam Putih</h2>
+
+                            {/* deskripsi produk */}
                             <p className="text-lg text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, facilis. Ipsam omnis illum consequuntur iste ex rerum ratione eligendi corporis.</p>
 
+                            {/* opsi */}
                             <div className="mb-6">
                                 <h3 className="text-xl font-semibold mb-2">Cetak Sisi</h3>
                                 <div className="flex space-x-4">
@@ -37,14 +43,16 @@ export default function CheckOut() {
                                 </div>
                             </div>
 
+                            {/* input catatan */}
                             <div className="mb-6">
                                 <h3 className="text-xl font-semibold mb-2">Catatan</h3>
-                                <textarea
-                                    className="w-full border-2 border-red-800 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-red-800"
+                                <Input
+                                    className="p-2 h-10"
                                     placeholder="Tulis catatan Anda di sini..."
-                                ></textarea>
+                                />
                             </div>
 
+                            {/* input jumlah cetak */}
                             <div className="mb-6 flex justify-between">
                                 <h3 className="text-xl font-semibold mb-2">Jumlah ( Cetak Berapa Kali )</h3>
                                 <div className="flex justify-end space-x-2">
@@ -60,9 +68,11 @@ export default function CheckOut() {
                                 </div>
                             </div>
 
+                            {/* button ke whatsaap */}
                             <ButtonOrder className="border-2 border-white w-full  text-white font-bold py-3 rounded-md transition duration-300 h-10 flex justify-center items-center">
                                 Order Sekarang
                             </ButtonOrder>
+
                         </div>
                     </div>
                 </section>

@@ -7,7 +7,7 @@ export default function ProductSections() {
 
     // mounting
     useEffect(function () {
-        fetch('https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLiaq0vtiqC5lUbp5QISKsCNKo78IlthRwKORMlZm4ARcdBW_mq-kBQBQ0TumD7ZK7AyvpSwWU7Zu6X9W1K0HonSQq9W9KIPckCzH7O0q8b0Y7CPbPRp6ApfVOeD2wVJuyREx7qUaApc2IGoEMH_XxW00mpuAaT1H9WWcOI-M_TkzY8o_ZKL9ra1EweE9f1McffhD2WiMjL8-yYj32hEJlpIaBF3Rg5KuO84Lud3EduRBmchX6GM7HwX6awzVscdpYcEe5_73KOoTDn1nUSqaHiXMslrcbRHAGCQoahy&lib=MRwva2RODuoJKcY1OrnynVx_6vdbiN_37')
+        fetch('https://script.google.com/macros/s/AKfycbwDJX3N7vGYiroTEMCVREu9Rmv5i53SAuYN0hyJrw8mTMlkT4H-7PY0WnsvfMaVmua93g/exec')
             .then(function (response) {
                 console.log(response)
                 return response.json()
@@ -25,7 +25,7 @@ export default function ProductSections() {
             <section className="my-8">
                 <h3 className="font-serif font-bold text-3xl flex justify-center items-center">Produk Kami</h3>
 
-                <div className="grid grid-cols-4 gap-4">
+                <div className="grid grid-cols-4 gap-6 my-8">
                     {
                         products !== null ?
                             products.map(function (product) {
@@ -37,7 +37,7 @@ export default function ProductSections() {
                                         price={product.price}
                                     />
                                 )
-                            }) : <p>Tidak Ada</p>
+                            }) : <p>Loading ......</p>
                     }
                 </div>
             </section>
