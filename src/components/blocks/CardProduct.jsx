@@ -24,8 +24,8 @@ export default function CardProduct({ price, image, title, }) {
                 {/* button keranjang */}
                 <div className="card-actions flex justify-center">
                     <Link className="w-full" to="/checkout">
-                        <ButtonOrder className="w-full h-10 flex justify-center items-center px-2 py-1">
-                            <Busket className="h-7 w-8 " />
+                        <ButtonOrder className="w-full h-10">
+                            <Busket className="h-6 w-8 " />
                         </ButtonOrder>
                     </Link>
                 </div>

@@ -4,7 +4,7 @@ import Container from "../layout/Container";
 
 export default function ProductSections() {
     const [products, setProducts] = useState(null)
-
+    const [isLoading, setLoading] = useState(false)
     // mounting
     useEffect(function () {
         fetch('https://script.google.com/macros/s/AKfycbwDJX3N7vGYiroTEMCVREu9Rmv5i53SAuYN0hyJrw8mTMlkT4H-7PY0WnsvfMaVmua93g/exec')
@@ -15,6 +15,7 @@ export default function ProductSections() {
             .then(function (response) {
                 console.log("data", response)
                 setProducts(response)
+                setLoading(false)
             })
     }, [])
 
@@ -26,6 +27,8 @@ export default function ProductSections() {
                 <h3 className="font-serif font-bold text-3xl flex justify-center items-center">Produk Kami</h3>
 
                 <div className="grid grid-cols-4 gap-6 my-8">
+
+
                     {
                         products !== null ?
                             products.map(function (product) {
@@ -37,7 +40,17 @@ export default function ProductSections() {
                                         price={product.price}
                                     />
                                 )
-                            }) : <p>Loading ......</p>
+                            }) :
+                            products && !isLoading ? (
+                                <CardProduct
+
+                                />
+                            ) : (
+                                <CardProduct />
+                            )
+
+
+
                     }
                 </div>
             </section>

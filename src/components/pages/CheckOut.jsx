@@ -34,10 +34,10 @@ export default function CheckOut() {
                             <div className="mb-6">
                                 <h3 className="text-xl font-semibold mb-2">Cetak Sisi</h3>
                                 <div className="flex space-x-4">
-                                    <ButtonOrder className="w-full h-3 p-2">
+                                    <ButtonOrder className="w-full h-3">
                                         1 Sisi
                                     </ButtonOrder>
-                                    <ButtonOrder className=" w-full  h-3 p-2">
+                                    <ButtonOrder className=" w-full  h-3">
                                         2 Sisi
                                     </ButtonOrder>
                                 </div>
@@ -56,13 +56,13 @@ export default function CheckOut() {
                             <div className="mb-6 flex justify-between">
                                 <h3 className="text-xl font-semibold mb-2">Jumlah ( Cetak Berapa Kali )</h3>
                                 <div className="flex justify-end space-x-2">
-                                    <Counter className="w-16 h-10">
+                                    <Counter className="w-20 h-10">
                                         -
                                     </Counter>
-                                    <div className="border-2 border-red-900 rounded-md w-16 h-10 flex items-center justify-center text-xl font-semibold">
+                                    <div className="border-3 border-red-900 rounded-md w-20 h-10 flex items-center justify-center text-2xl font-semibold">
                                         1
                                     </div>
-                                    <Counter className="w-16 h-10">
+                                    <Counter className="w-20 h-10">
                                         +
                                     </Counter>
                                 </div>

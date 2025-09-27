@@ -4,11 +4,11 @@ import Input from "../ui/Input";
 
 export default function Navbar() {
     return (
-        <nav className="bg-white shadow">
+        <nav className="bg-white shadow sticky top-0 py-2 px-4 z-50">
             <Container className={"flex justify-between items-center px-4 py-2"}>
 
                 {/* Logo */}
-                <a href="/" className="text-3xl font-serif text-red-900">Flash.Print</a>
+                <a href="/" className="text-3xl font-serif text-red-900 font-bold hover:opacity-50 transition-all">Flash.Print</a>
 
                 {/* Search Bar */}
                 <div className="relative flex items-center w-[900px] font-serif">
