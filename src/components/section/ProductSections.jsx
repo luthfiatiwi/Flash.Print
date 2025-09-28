@@ -4,9 +4,10 @@ import Container from "../layout/Container";
 
 export default function ProductSections() {
     const [products, setProducts] = useState(null)
-    const [isLoading, setLoading] = useState(false)
+    const [isLoading, setLoading] = useState(true)
     // mounting
     useEffect(function () {
+        setLoading(true)
         fetch('https://script.google.com/macros/s/AKfycbwDJX3N7vGYiroTEMCVREu9Rmv5i53SAuYN0hyJrw8mTMlkT4H-7PY0WnsvfMaVmua93g/exec')
             .then(function (response) {
                 console.log(response)
@@ -30,7 +31,7 @@ export default function ProductSections() {
 
 
                     {
-                        products !== null ?
+                        products !== null && products.length > 0 ?
                             products.map(function (product) {
                                 return (
                                     <CardProduct
@@ -41,12 +42,16 @@ export default function ProductSections() {
                                     />
                                 )
                             }) :
-                            products && !isLoading ? (
-                                <CardProduct
+                            isLoading ? (
+                                <>
+                                    <CardProduct />
+                                    <CardProduct />
+                                    <CardProduct />
+                                    <CardProduct />
+                                </>
 
-                                />
                             ) : (
-                                <CardProduct />
+                                <p>Tidak Ada Data</p>
                             )
 
 
