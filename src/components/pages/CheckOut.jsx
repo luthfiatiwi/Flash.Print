@@ -34,7 +34,9 @@ export default function CheckOut() {
                             <div className="mb-6">
                                 <h3 className="text-xl font-semibold mb-2">Cetak Sisi</h3>
                                 <div className="flex space-x-4">
-                                    <ButtonOrder className="w-full h-3">
+                                    <ButtonOrder
+                                        className="w-full h-3"
+                                    >
                                         1 Sisi
                                     </ButtonOrder>
                                     <ButtonOrder className=" w-full  h-3">
