@@ -27,7 +27,7 @@ export default function ProductSections() {
             <section className="my-8">
                 <h3 className="font-serif font-bold text-3xl flex justify-center items-center">Produk Kami</h3>
 
-                <div className="grid grid-cols-4 gap-6 my-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 my-8">
 
 
                     {

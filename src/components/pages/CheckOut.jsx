@@ -2,7 +2,6 @@ import Container from "../layout/Container"
 import MainLayout from "../layout/MainLayout"
 import ButtonOrder from "../ui/ButtonOrder"
 import Counter from "../ui/Counter"
-import Input from "../ui/Input"
 import { useState } from "react"
 
 
@@ -65,7 +64,7 @@ export default function CheckOut() {
     };
 
     // Nomor WhatsApp tujuan (GANTI DENGAN NOMOR ANDA)
-    const whatsappNumber = '6281234567890'; // Contoh: Ganti dengan nomor WhatsApp aktif Anda
+    const whatsappNumber = '62895421837105'; // Contoh: Ganti dengan nomor WhatsApp aktif Anda
 
 
     // Fungsi untuk membuat dan membuka link WhatsApp
