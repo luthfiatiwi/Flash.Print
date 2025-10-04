@@ -102,15 +102,14 @@ export default function CheckOut() {
                 <section className="my-8">
                     <h2 className="text-2xl font-serif font-bold text-center mb-10">A4 HVS Hitam Putih</h2>
 
-                    <div className="flex flex-col md:flex-row items-center md:items-start md:space-x-8">
-
+                    <div className="flex flex-col gap-6 md:flex-row md:gap-8 items-center md:items-start">
                         {/* Bagian untuk Gambar Produk */}
-                        <div className="w-full md:w-1/2 bg-red-600 rounded-lg h-96">
+                        <div className="w-full sm:w-3/4 md:w-1/2 bg-red-600 rounded-lg h-56 sm:h-72 md:h-96 mx-auto md:mx-0 flex-shrink-0">
                             {/* Placeholder untuk gambar produk */}
                         </div>
 
                         {/* Bagian untuk Detail Produk */}
-                        <div className="w-full md:w-1/2 border-2 border-red-800 rounded-lg p-6 bg-white shadow-lg font-serif">
+                        <div className="w-full sm:w-3/4 md:w-1/2 border-2 border-red-800 rounded-lg p-4 sm:p-6 bg-white shadow-lg font-serif mx-auto md:mx-0">
 
                             {/* nama produk */}
                             <h2 className="text-2xl md:text-3xl font-bold mb-2">A4 HVS Hitam Putih</h2>
