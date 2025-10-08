@@ -1,12 +1,23 @@
 
-import { useContext, useEffect } from "react";
+import { useContext, useState } from "react";
 import CardProduct from "../blocks/CardProduct";
 import Container from "../layout/Container";
 import { ProductsContext } from "../contexts/products";
 
 
 export default function ProductSections() {
-    const { products, loading } = useContext(ProductsContext)
+    const { products, loading, loadMoreProducts } = useContext(ProductsContext)
+    const [hasMore, setHasMore] = useState(true);
+
+    const handleLoadMore = async () => {
+        const newProductsCount = await loadMoreProducts();
+        if (newProductsCount === 0) {
+            setHasMore(false);
+        }
+
+    }
+
+
 
 
 
@@ -20,7 +31,7 @@ export default function ProductSections() {
 
 
                     {
-                        products !== null && products.length > 0 ? (
+                        products && products.length > 0 ? (
                             products.map(function (product) {
                                 return (
                                     <CardProduct
