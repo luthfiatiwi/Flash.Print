@@ -1,56 +1,15 @@
-import { useEffect, useState } from "react"
+
+import { useContext, useEffect } from "react";
 import CardProduct from "../blocks/CardProduct";
 import Container from "../layout/Container";
+import { ProductsContext } from "../contexts/products";
+
 
 export default function ProductSections() {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    // untuk pagination
-    const [currentPage, setCurrentPage] = useState(1);
-    const [hasMore, setHasMore] = useState(true);
-    // untuk searching
-
-    const fetchProducts = () => {
-        setLoading(true);
-        // SOLUSI: Tambahkan parameter 'page=' dan pastikan pemisah '&' ada sebelum 'limit'
-        let url =
-            "https://script.google.com/macros/s/AKfycbwyATRhlwyNorgWg5HTxp_IRlMQeLbkrXh9aMAn8wXt7AOywyza-jDJJgcZud3ANFDG_A/exec?path=products" +
-            "&page=" + // Parameter untuk halaman
-            currentPage +
-            "&limit=12";
+    const { products, loading } = useContext(ProductsContext)
 
 
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                if (currentPage === 1) {
-                    setProducts(data.data || []);
-                } else {
-                    // Gabungkan produk lama dengan produk baru
-                    const oldProducts = products;
-                    const newProducts = data.data || [];
-                    setProducts(oldProducts.concat(newProducts));
-                }
-                setHasMore((data.data || []).length === 12);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                setProducts([]);
-                setLoading(false);
-            });
-    };
 
-    useEffect(() => {
-        // Dipanggil saat komponen mount dan setiap kali currentPage berubah
-        fetchProducts();
-    }, [currentPage]); // Tambahkan currentPage sebagai dependency
-
-    const handleLoadMore = () => {
-        // Cukup update currentPage, fetch akan otomatis dipanggil oleh useEffect
-        setCurrentPage(prevPage => prevPage + 1);
-    };
 
     return (
         <Container>

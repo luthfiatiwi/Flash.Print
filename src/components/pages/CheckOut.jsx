@@ -109,7 +109,7 @@ export default function CheckOut() {
                         </div>
 
                         {/* Bagian untuk Detail Produk */}
-                        <div className="w-full sm:w-3/4 md:w-1/2 border-2 border-red-800 rounded-lg p-4 sm:p-6 bg-white shadow-lg font-serif mx-auto md:mx-0">
+                        <div className="w-full sm:w-3/4 md:w-1/2 border-4 border-red-800 rounded-lg p-4 sm:p-6 bg-white shadow-lg font-serif mx-auto md:mx-0">
 
                             {/* nama produk */}
                             <h2 className="text-2xl md:text-3xl font-bold mb-2">A4 HVS Hitam Putih</h2>
