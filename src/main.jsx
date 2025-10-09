@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/checkout' element={<CheckOut />} />
+        <Route path='/checkout/:id' element={<CheckOut />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

@@ -1,49 +1,50 @@
-import Busket from "../icons/Busket"
+import Busket from "../icons/Busket";
+import { useContext } from "react";
+import { ProductsContext } from "../contexts/products";
 import ButtonOrder from "../ui/ButtonOrder";
-import { Link } from "react-router";
 
-export default function CardProduct({ price, image, title, }) {
+export default function CardProduct({ product }) {
+    const { setSelectedProduct } = useContext(ProductsContext);
 
-    // cek data
-    if (!price && !image && !title) {
-        return (<CardProductSkeleton />)
+    if (!product) return <CardProductSkeleton />;
 
-
-    }
-
+    const handleOrderClick = () => {
+        setSelectedProduct(product);
+        window.location.href = `/checkout/${product.id}`;
+    };
 
     return (
         <div className="card bg-base-100 w-full shadow-sm border-red-800 border-4 rounded-2xl">
-            {/* gambar */}
             <figure className="px-7 pt-7">
                 <img
-                    src={image}
-                    alt="gambar product"
-                    className="rounded-xl h-48 bg-gray-500 w-full" />
+                    src={product.image}
+                    alt={product.title}
+                    className="rounded-xl h-48 bg-gray-500 w-full"
+                />
             </figure>
 
-
             <div className="card-body">
-                {/* tittle */}
-                <h3 className="text-2xl font-serif font-bold ">{title}</h3>
+                <h3 className="text-2xl font-serif font-bold">{product.title}</h3>
+                <p className="font-serif text-[20px] font-bold">
+                    {new Intl.NumberFormat("id-ID", {
+                        style: "currency",
+                        currency: "IDR",
+                    }).format(product.price)}
+                </p>
 
-                {/* price */}
-                <p className="font-serif text-[20px] font-bold">{new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR" }).format(price)}</p>
-
-                {/* button keranjang */}
                 <div className="card-actions flex justify-center">
-                    <Link className="w-full" to="/checkout">
-                        <ButtonOrder className="w-full h-10">
-                            <Busket className="h-6 w-8 " />
-                        </ButtonOrder>
-                    </Link>
+                    <ButtonOrder
+                        onClick={handleOrderClick}
+                        className="w-full h-10">
+                        <Busket className="h-6 w-8 " />
+                    </ButtonOrder>
                 </div>
             </div>
-
         </div>
-
-    )
+    );
 }
+
+
 function CardProductSkeleton() {
     return (
         <div className="card bg-base-100 w-full shadow-sm border-red-800 border-4 rounded-2xl animate-pulse">
@@ -71,4 +72,3 @@ function CardProductSkeleton() {
         </div>
     )
 }
-
