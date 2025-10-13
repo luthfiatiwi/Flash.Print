@@ -19,7 +19,7 @@ export default function CardProduct({ product }) {
                 <img
                     src={product.image}
                     alt={product.title}
-                    className="rounded-xl h-48 bg-gray-500 w-full"
+                    className="rounded-xl h-48 bg-gray-500 w-full object-cover aspect-[4/5]"
                 />
             </figure>
 

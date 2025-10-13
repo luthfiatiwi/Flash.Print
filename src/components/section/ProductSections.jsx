@@ -6,10 +6,9 @@ import { ProductsContext } from "../contexts/products";
 export default function ProductSections() {
     const { products, loading, loadMoreProducts } = useContext(ProductsContext);
     const [hasMore, setHasMore] = useState(true);
-    const [firstLoad, setFirstLoad] = useState(true);
+
 
     const handleLoadMore = async () => {
-        setFirstLoad(false);
         const newProductsCount = await loadMoreProducts();
         if (newProductsCount === 0) {
             setHasMore(false);
@@ -23,7 +22,7 @@ export default function ProductSections() {
                     Produk Kami
                 </h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 my-8 items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 my-8">
 
                     {products && products.length > 0 ? (
                         products.map((product) => (
@@ -32,7 +31,7 @@ export default function ProductSections() {
                                 product={product}
                             />
                         ))
-                    ) : loading && firstLoad ? (
+                    ) : loading ? (
 
                         <>
                             <CardProduct />
@@ -50,7 +49,7 @@ export default function ProductSections() {
 
                 {hasMore && (
                     <div className="text-center mb-10">
-                        {loading && !firstLoad ? (
+                        {loading ? (
                             <div className="inline-flex items-center gap-2 px-8 py-3 bg-gray-100 text-gray-600 rounded-xl">
                                 <div className="animate-spin rounded-full h-5 w-5 border-2 border-solid border-blue-600 border-r-transparent"></div>
                                 Loading...

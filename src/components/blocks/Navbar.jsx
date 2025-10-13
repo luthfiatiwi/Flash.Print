@@ -5,17 +5,21 @@ import Input from "../ui/Input";
 import { ProductsContext } from "../contexts/products";
 
 export default function Navbar() {
-    const { setProducts } = useContext(ProductsContext)
+    const { setProducts, setLoading } = useContext(ProductsContext)
+
 
     function searchProduct() {
         const inputValue = document.querySelector("input").value;
         if (!inputValue.trim()) return;
 
+        setLoading(true)
+        setProducts([])
         fetch("https://script.google.com/macros/s/AKfycbzo0OKX6fVOe16ndna0_x1yg4i0KShekL4HxKuFWbVqTE2_C_j7tEilcW6Emk35Qt2OPw/exec?path=products&search=" + encodeURIComponent(inputValue))
             .then((res) => res.json())
             .then((data) => {
                 console.log("data", data);
                 setProducts(data.data);
+                setLoading(false);
             })
             .catch((err) => console.error("Error:", err));
     }
