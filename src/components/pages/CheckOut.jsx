@@ -248,37 +248,41 @@ export default function CheckOut() {
                             )}
 
                             {/* Cetak Sisi */}
-                            {!isCustomSize && !isColorOptionProduct && !isPolaroidProduct && (
-                                <div className="mb-6">
-                                    <h3 className="text-xl font-semibold mb-2">Cetak Sisi</h3>
-                                    <div className="flex space-x-4">
-                                        {(() => {
-                                            let sides = ["1 Sisi", "2 Sisi"];
-                                            if (["21", "24"].includes(String(product.id))) {
-                                                sides = ["1 Sisi"];
-                                                if (selectedSide !== "1 Sisi") setSelectedSide("1 Sisi");
-                                            }
-                                            if (["22", "23", "25"].includes(String(product.id))) {
-                                                sides = ["2 Sisi"];
-                                                if (selectedSide !== "2 Sisi") setSelectedSide("2 Sisi");
-                                            }
-                                            return sides.map((side) => (
-                                                <button
-                                                    key={side}
-                                                    onClick={() => setSelectedSide(side)}
-                                                    className={`flex-1 py-2 px-4 rounded-lg font-bold transition duration-200 h-10
-                                                    ${selectedSide === side
-                                                            ? "bg-red-800 text-white"
-                                                            : "bg-white text-red-800 border-4 border-red-800 hover:bg-red-50"
-                                                        }`}
-                                                >
-                                                    {side}
-                                                </button>
-                                            ));
-                                        })()}
+                            {!isCustomSize &&
+                                !isColorOptionProduct &&
+                                !isPolaroidProduct &&
+                                !(Number(product.id) >= 33 && Number(product.id) <= 37) && (
+                                    <div className="mb-6">
+                                        <h3 className="text-xl font-semibold mb-2">Cetak Sisi</h3>
+                                        <div className="flex space-x-4">
+                                            {(() => {
+                                                let sides = ["1 Sisi", "2 Sisi"];
+                                                if (["21", "24"].includes(String(product.id))) {
+                                                    sides = ["1 Sisi"];
+                                                    if (selectedSide !== "1 Sisi") setSelectedSide("1 Sisi");
+                                                }
+                                                if (["22", "23", "25"].includes(String(product.id))) {
+                                                    sides = ["2 Sisi"];
+                                                    if (selectedSide !== "2 Sisi") setSelectedSide("2 Sisi");
+                                                }
+                                                return sides.map((side) => (
+                                                    <button
+                                                        key={side}
+                                                        onClick={() => setSelectedSide(side)}
+                                                        className={`flex-1 py-2 px-4 rounded-lg font-bold transition duration-200 h-10
+                                                        ${selectedSide === side
+                                                                ? "bg-red-800 text-white"
+                                                                : "bg-white text-red-800 border-4 border-red-800 hover:bg-red-50"
+                                                            }`}
+                                                    >
+                                                        {side}
+                                                    </button>
+                                                ));
+                                            })()}
+                                        </div>
                                     </div>
-                                </div>
-                            )}
+                                )}
+
 
                             {/* Ukuran */}
                             {isCustomSize && (
