@@ -172,10 +172,15 @@ export default function CheckOut() {
                         {/* Tombol kecil di kiri */}
                         <a
                             href="/"
-                            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-red-800 text-white text-xs sm:text-sm font-semibold py-1 px-3 rounded-lg hover:bg-red-900 transition duration-200 border-2 border-red-800"
+                            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 flex items-center justify-center bg-red-800 hover:bg-red-900 border-2 border-red-800 rounded-lg transition duration-200 p-2 sm:p-2.5"
                         >
-                            Kembali
+                            <img
+                                src="/kembali.svg"
+                                alt="Kembali"
+                                className="w-4 h-4 sm:w-5 sm:h-5 invert"
+                            />
                         </a>
+
 
                         {/* Judul produk di tengah */}
                         <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-center px-10">
