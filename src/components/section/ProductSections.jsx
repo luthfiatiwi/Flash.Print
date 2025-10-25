@@ -7,7 +7,6 @@ export default function ProductSections() {
     const { products, loading, loadMoreProducts } = useContext(ProductsContext);
     const [hasMore, setHasMore] = useState(true);
 
-
     const handleLoadMore = async () => {
         const newProductsCount = await loadMoreProducts();
         if (newProductsCount === 0) {
@@ -23,16 +22,11 @@ export default function ProductSections() {
                 </h3>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6 my-8">
-
                     {products && products.length > 0 ? (
                         products.map((product) => (
-                            <CardProduct
-                                key={product.id}
-                                product={product}
-                            />
+                            <CardProduct key={product.id} product={product} />
                         ))
                     ) : loading ? (
-
                         <>
                             <CardProduct />
                             <CardProduct />
@@ -46,20 +40,34 @@ export default function ProductSections() {
                     )}
                 </div>
 
-
                 {hasMore && (
                     <div className="text-center mb-10">
                         {loading ? (
-                            <div className="inline-flex items-center gap-2 px-8 py-3 bg-gray-100 text-gray-600 rounded-xl">
+                            <div className="inline-flex items-center gap-2 px-6 py-2 bg-gray-100 text-gray-600 rounded-xl">
                                 <div className="animate-spin rounded-full h-5 w-5 border-2 border-solid border-blue-600 border-r-transparent"></div>
                                 Loading...
                             </div>
                         ) : (
                             <button
                                 onClick={handleLoadMore}
-                                className="px-8 py-3 border-4 border-red-900 bg-red-900 hover:bg-white hover:border-red-900 hover:text-red-900 text-white rounded-xl transition-all duration-300 font-semibold transform"
+                                className="
+                                    inline-block
+                                    px-6 py-2
+                                    text-base
+                                    border-4 border-red-900 
+                                    bg-red-900 
+                                    hover:bg-white 
+                                    hover:border-red-900 
+                                    hover:text-red-900 
+                                    text-white 
+                                    rounded-xl 
+                                    transition-all 
+                                    duration-300 
+                                    font-semibold 
+                                    transform
+                                "
                             >
-                                Load More Products
+                                Produk Lainnya
                             </button>
                         )}
                     </div>

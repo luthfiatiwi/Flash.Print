@@ -4,6 +4,7 @@ import ButtonOrder from "../ui/ButtonOrder";
 import Counter from "../ui/Counter";
 import { useState, useContext, useEffect } from "react";
 import { ProductsContext } from "../contexts/products";
+import Swal from 'sweetalert2'
 
 export default function CheckOut() {
     const { selectedProduct } = useContext(ProductsContext);
@@ -103,7 +104,12 @@ export default function CheckOut() {
     const whatsappNumber = "62895421837105";
     const handleOrderNow = () => {
         if (!name.trim()) {
-            alert("Harap isi nama terlebih dahulu!");
+            Swal.fire({
+                icon: "error",
+                title: "Order Gagal",
+                text: "Harap Isi Nama Anda di kolom Atas Nama!!",
+                // footer: '<a href="#">Why do I have this issue?</a>'
+            });
             return;
         }
 
@@ -162,9 +168,22 @@ export default function CheckOut() {
         <MainLayout>
             <Container>
                 <section className="my-8">
-                    <h2 className="text-2xl font-serif font-bold text-center mb-10">
-                        {product.title}
-                    </h2>
+                    <div className="relative mb-10 flex items-center justify-center">
+                        {/* Tombol kecil di kiri */}
+                        <a
+                            href="/"
+                            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-red-800 text-white text-xs sm:text-sm font-semibold py-1 px-3 rounded-lg hover:bg-red-900 transition duration-200 border-2 border-red-800"
+                        >
+                            Kembali
+                        </a>
+
+                        {/* Judul produk di tengah */}
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-center px-10">
+                            {product.title}
+                        </h2>
+                    </div>
+
+
 
                     <div className="flex flex-col md:flex-row md:gap-8 gap-6 items-stretch">
                         {/* Gambar */}
@@ -269,7 +288,7 @@ export default function CheckOut() {
                                                     <button
                                                         key={side}
                                                         onClick={() => setSelectedSide(side)}
-                                                        className={`flex-1 py-2 px-4 rounded-lg font-bold transition duration-200 h-10
+                                                        className={`flex-1 py-2 px-4 rounded-lg font-bold transition duration-200 h-10 cursor-pointer
                                                         ${selectedSide === side
                                                                 ? "bg-red-800 text-white"
                                                                 : "bg-white text-red-800 border-4 border-red-800 hover:bg-red-50"
